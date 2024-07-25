@@ -39,8 +39,8 @@ public class RegisteredCustomers {
     private String email;
 
     @NonNull
-    @Enumerated(EnumType.STRING)
-    @Column(name = "permissions", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "permission_type_id", nullable = false)
     private PermissionType permissions;
 
     @NonNull
@@ -58,8 +58,5 @@ public class RegisteredCustomers {
     @Temporal(TemporalType.DATE)
     private Date updatedAt;
 
-    public enum PermissionType {
-        ADMIN, USER, GUEST;
-    }
 
 }
