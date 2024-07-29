@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fs.iml" filepath="$PROJECT_DIR$/.idea/fs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/furniture_store/furniture_store.iml" filepath="$PROJECT_DIR$/furniture_store/furniture_store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/furniture_store.iml" filepath="$PROJECT_DIR$/.idea/furniture_store.iml" />
     </modules>
   </component>
 </project>

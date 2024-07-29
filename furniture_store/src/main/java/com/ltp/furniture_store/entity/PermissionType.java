@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
-@Entity 
+@Entity
 @Table(name = "permission_types")
 public class PermissionType {
 
