@@ -1,0 +1,21 @@
+body {
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    font-size:x-large;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 20px;
+    
+}
+
+.contact-container {
+    text-align: center;
+   
+}
+
+.highlight {
+    background-color: #e9f362;
+}

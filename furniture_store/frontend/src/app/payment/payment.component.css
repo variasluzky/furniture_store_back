@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    direction: rtl;
+    text-align: right;
+}
+
+.highlight {
+    background-color: yellow;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.payment-form input,
+.payment-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.payment-form textarea {
+    height: 60px;
+    resize: none;
+}
+
+.payment-form .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-form .quantity button {
+    background-color: #ffa07a;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.payment-form .quantity input {
+    width: 30px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.payment-form .total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.payment-form .checkout-button {
+    background-color: #ffa07a;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.payment-form .checkout-button:hover {
+    background-color: #ff7f50;
+}

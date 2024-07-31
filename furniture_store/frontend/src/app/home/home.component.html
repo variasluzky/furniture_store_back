@@ -1,0 +1,26 @@
+
+<button (click)="getData()">get data</button>
+{{mainData | json}}
+
+ <!--<div *ngIf="data">
+    <div *ngFor="let user of mainData">
+        {{user.employee_name}}
+    </div>
+</div> -->
+
+    <div class="container">
+        <header class="header">
+            <h1>דף הבית</h1>
+        </header>
+        <main class="main-content">
+            <img src="../../assets/images/fornuturBigImage.jpg" alt="תמונה גדולה של ריהוט" id="large-image"/> 
+            <section class="products">
+                <div id="table-home"><img src="../../assets/furnitur-home.jpg" alt="ריהוט" routerLink="/table-galery" id="table-home-img">שולחנות</div>
+                <div id="table-home"><img src="../../assets/chair-home.jpg" alt="כסא" routerLink="/chair" id="table-home-img">כסאות</div>
+                <div id="table-home"><img src="../../assets/table-homejpg.jpg" alt="שולחן" routerLink="/table-galery" id="table-home-img">שולחנות</div>
+            </section>
+        </main>
+        <app-footer></app-footer>
+    </div>
+
+

@@ -1,0 +1,27 @@
+
+<body>
+    <div class="container">
+        <h2>יצירת חשבון</h2>
+        <form class="account-form">
+            <label for="email">כתובת אימייל</label>
+            <input type="email" id="email" name="email" required>
+
+            <div class="name-fields">
+                <label for="first-name">שם פרטי</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">שם משפחה</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <label for="password">סיסמה (חייב לכלול לפחות 8 תווים)</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+
+            <label for="confirm-password">אימות סיסמה</label>
+            <input type="password" id="confirm-password" name="confirm-password" minlength="8" required>
+
+            <button type="submit">צור חשבון</button>
+        </form>
+    </div>
+</body>
+

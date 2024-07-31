@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    direction: rtl;
+}
+
+.header {
+    background-color: #FFFF00;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+}
+
+.main-content {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-table th, .order-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+}
+
+.order-table th {
+    background-color: #F0F0F0;
+}
+
+.footer-text {
+    margin-top: 20px;
+    font-size: 16px;
+}
