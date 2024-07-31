@@ -2,7 +2,6 @@ package com.ltp.furniture_store.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
@@ -12,7 +11,7 @@ import org.springframework.data.annotation.Id;
 @Table(name = "permission_types")
 public class PermissionType {
 
-    @Id
+    @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;

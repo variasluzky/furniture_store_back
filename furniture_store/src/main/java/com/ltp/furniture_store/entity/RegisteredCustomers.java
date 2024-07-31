@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
+
 
 @Getter
 @Setter
@@ -33,7 +33,6 @@ public class RegisteredCustomers {
     @Column(name = "phone", nullable = false)
     private String phone;
 
-    @Id
     @NonNull
     @Column(name = "email", nullable = false, unique = true)
     private String email;
