@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
+
 
 
 @Getter
@@ -17,8 +19,7 @@ import lombok.*;
 public class RegisteredCustomers {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
+    @Column(name = "customer_id",nullable = false)
     private Integer customerId;
 
     @NonNull
@@ -57,5 +58,7 @@ public class RegisteredCustomers {
     @Temporal(TemporalType.DATE)
     private Date updatedAt;
 
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 
 }

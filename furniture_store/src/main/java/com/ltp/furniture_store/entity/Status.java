@@ -8,15 +8,15 @@ import lombok.*;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "permission_types")
-public class PermissionType {
+@Table(name = "status")
+public class Status {
 
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "permission_id")
-    private Short permissionId;
+    @Column(name = "status_id")
+    private Short statusId;
 
     @NonNull
-    @Column(name = "permission_status", nullable = false)
-    private String permissionStatus;
+    @Column(name = "description_status", nullable = false)
+    private String descriptionStatus;
 }

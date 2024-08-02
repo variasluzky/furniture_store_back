@@ -13,29 +13,33 @@ public class PermissionTypeService {
     @Autowired
     private PermissionTypeRepository repository;
 
+    // Fetch all permission types
     public List<PermissionType> getAllPermissionTypes() {
         return repository.findAll();
     }
 
-    public PermissionType getPermissionTypeById(Long id) {
+    // Fetch a single permission type by ID
+    public PermissionType getPermissionTypeById(Short id) {
         return repository.findById(id).orElse(null);
     }
 
+    // Create a new permission type
     public PermissionType createPermissionType(PermissionType permissionType) {
         return repository.save(permissionType);
     }
 
-    public PermissionType updatePermissionType(Long id, PermissionType permissionType) {
+    // Update an existing permission type
+    public PermissionType updatePermissionType(Short id, PermissionType updatedPermissionType) {
         PermissionType existingPermissionType = repository.findById(id).orElse(null);
         if (existingPermissionType != null) {
-            existingPermissionType.setName(permissionType.getName());
-            existingPermissionType.setDescription(permissionType.getDescription());
+            existingPermissionType.setPermissionStatus(updatedPermissionType.getPermissionStatus());
             return repository.save(existingPermissionType);
         }
         return null;
     }
 
-    public void deletePermissionType(Long id) {
+    // Delete a permission type by ID
+    public void deletePermissionType(Short id) {
         repository.deleteById(id);
     }
 }
