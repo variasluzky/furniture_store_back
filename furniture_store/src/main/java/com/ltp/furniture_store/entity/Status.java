@@ -11,7 +11,7 @@ import lombok.*;
 @Table(name = "status")
 public class Status {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "status_id")
     private Short statusId;

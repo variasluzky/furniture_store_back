@@ -1,22 +1,27 @@
 package com.ltp.furniture_store.entity;
 
+
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "permission_types")
-public class PermissionType {
+@Table(name = "promotion")
+public class Promotion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "permission_id")
-    private Short permissionId;
+    @Column(name = "promotion_code")
+    private Short promotionCode;
 
     @NonNull
-    @Column(name = "permission_status", nullable = false)
-    private String permissionStatus;
+    @Column(name = "discount")
+    private BigDecimal discount;
+
+
 }
