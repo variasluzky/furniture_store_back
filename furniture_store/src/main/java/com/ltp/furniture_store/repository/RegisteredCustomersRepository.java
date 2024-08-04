@@ -6,5 +6,4 @@ import com.ltp.furniture_store.entity.RegisteredCustomer;
 
 @Repository
 public interface RegisteredCustomersRepository extends JpaRepository<RegisteredCustomer, Integer> {
-    // Additional query methods can be defined here
 }
