@@ -23,7 +23,7 @@ public class Order {
     @NonNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", nullable = false)
-    private RegisteredCustomers customer;
+    private RegisteredCustomer customer;
 
     @NonNull
     @Column(name = "total_price")

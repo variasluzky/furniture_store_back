@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "registered_customers")
-public class RegisteredCustomers {
+public class RegisteredCustomer {
 
     @Id
     @Column(name = "customer_id",nullable = false)
