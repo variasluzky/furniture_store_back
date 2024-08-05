@@ -1,24 +1,24 @@
 package com.ltp.furniture_store.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
+
 
 @Getter
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "color")
-public class Color {
+@Table(name = "shopping_cart_status")
+public class ShoppingCartStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "color_code")
-    private Short colorCode;
+    @Column(name = "status_cart")
+    private Short statusCart;
 
     @NonNull
-    @Column(name = "color_description", nullable = false)
-    private String colorDescription;
+    @Column(name = "status_description", nullable = false)
+    private String statusDescription;
 
 }

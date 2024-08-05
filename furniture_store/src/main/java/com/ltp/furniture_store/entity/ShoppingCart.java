@@ -1,5 +1,6 @@
 package com.ltp.furniture_store.entity;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,13 +11,13 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "payment")
-public class Payment {
+@Table(name = "shopping_cart")
+public class ShoppingCart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "receipt_num")
-    private Long receiptNum;
+    @Column(name = "cart_id")
+    private Integer cartId;
 
     @NonNull
     @ManyToOne(fetch = FetchType.EAGER)
@@ -25,18 +26,16 @@ public class Payment {
 
     @NonNull
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id",nullable = false)
-    private Order order;
+    @JoinColumn(name = "status_cart", nullable = false)
+    private ShoppingCartStatus shoppingCartStatus;
 
     @NonNull
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name ="payment_id",nullable = false)
-    private CreditCardDetail creditCardDetail;
+    @Column(name = "created_at", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
     @NonNull
-    @Column(name = "payment_date", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date paymentDate;
-
-
+    @Column(name = "updated_at", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt;
 }

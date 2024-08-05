@@ -1,14 +1,12 @@
 package com.ltp.furniture_store.entity;
 
-import com.ltp.furniture_store.repository.OrderItemRepository;
+
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
-//@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "order_item")
 public class OrderItem {
