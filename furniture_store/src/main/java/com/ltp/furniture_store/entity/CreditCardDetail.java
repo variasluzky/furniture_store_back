@@ -1,10 +1,8 @@
 package com.ltp.furniture_store.entity;
 
-import jakarta.annotation.PostConstruct;
+import com.ltp.furniture_store.service.EncryptionService;
 import jakarta.persistence.*;
 import lombok.*;
-import org.jasypt.util.text.AES256TextEncryptor;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.time.YearMonth;
 
@@ -24,17 +22,6 @@ public class CreditCardDetail {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", nullable = false)
     private RegisteredCustomer registeredCustomer;
-
-    @Value("${jasypt.encryptor.password}")
-    private String encryptionKey;
-
-    private AES256TextEncryptor encryptor;
-
-    @PostConstruct
-    public void init() {
-        encryptor = new AES256TextEncryptor();
-        encryptor.setPassword(encryptionKey);
-    }
 
     @NonNull
     @Column(name = "cardholder_id", nullable = false)
@@ -56,46 +43,49 @@ public class CreditCardDetail {
     @Column(name = "credit_card_exp_date", nullable = false)
     private YearMonth creditCardExpDate;
 
-    @Column (name = "cvv",nullable = false)
+    @Column(name = "cvv", nullable = false)
     private String encryptedCvv;
+
+    // Default constructor, getters, and setters...
 
     // Custom constructor with encryption
     public CreditCardDetail(RegisteredCustomer registeredCustomer, String cardholderId, String creditCardNumber,
-                            String cardholderFirstName, String cardholderLastName, YearMonth creditCardExpDate, String cvv) {
+                            String cardholderFirstName, String cardholderLastName, YearMonth creditCardExpDate, String cvv,
+                            EncryptionService encryptionService) {
         this.registeredCustomer = registeredCustomer;
         this.cardholderFirstName = cardholderFirstName;
         this.cardholderLastName = cardholderLastName;
         this.creditCardExpDate = creditCardExpDate;
 
         // Encrypt sensitive data
-        this.encryptedCardholderId = encryptor.encrypt(cardholderId);
-        this.encryptedCreditCardNumber = encryptor.encrypt(creditCardNumber);
-        this.encryptedCvv = encryptor.encrypt(cvv);
+        this.encryptedCardholderId = encryptionService.encrypt(cardholderId);
+        this.encryptedCreditCardNumber = encryptionService.encrypt(creditCardNumber);
+        this.encryptedCvv = encryptionService.encrypt(cvv);
     }
 
-    // Getters and setters for encrypted fields
+    // Setters and getters for encrypted fields using EncryptionService
 
-    public void setCvv(String cvv) {
-        this.encryptedCvv = encryptor.encrypt(cvv);
+    public void setCvv(String cvv, EncryptionService encryptionService) {
+        this.encryptedCvv = encryptionService.encrypt(cvv);
     }
 
-    public String getCvv() {
-        return encryptor.decrypt(this.encryptedCvv);
-    }
-    public void setCardholderId(String cardholderId) {
-        this.encryptedCardholderId = encryptor.encrypt(cardholderId);
+    public String getCvv(EncryptionService encryptionService) {
+        return encryptionService.decrypt(this.encryptedCvv);
     }
 
-    public String getCardholderId() {
-        return encryptor.decrypt(this.encryptedCardholderId);
+    public void setCardholderId(String cardholderId, EncryptionService encryptionService) {
+        this.encryptedCardholderId = encryptionService.encrypt(cardholderId);
     }
 
-    public void setCreditCardNumber(String creditCardNumber) {
-        this.encryptedCreditCardNumber = encryptor.encrypt(creditCardNumber);
+    public String getCardholderId(EncryptionService encryptionService) {
+        return encryptionService.decrypt(this.encryptedCardholderId);
     }
 
-    public String getCreditCardNumber() {
-        return encryptor.decrypt(this.encryptedCreditCardNumber);
+    public void setCreditCardNumber(String creditCardNumber, EncryptionService encryptionService) {
+        this.encryptedCreditCardNumber = encryptionService.encrypt(creditCardNumber);
     }
 
+    public String getCreditCardNumber(EncryptionService encryptionService) {
+        return encryptionService.decrypt(this.encryptedCreditCardNumber);
+    }
 }

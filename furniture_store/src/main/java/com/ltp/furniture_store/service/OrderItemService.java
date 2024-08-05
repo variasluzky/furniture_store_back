@@ -18,7 +18,7 @@ public class OrderItemService {
         if(orderItem.getId() == null){
             OrderItemId id = new OrderItemId();
             id.setOrderId(orderItem.getOrder().getOrderId());
-            id.setOrderItemID(generateNextOrderItemId(orderItem.getOrder().getOrderId()));
+            id.setOrderItemId(generateNextOrderItemId(orderItem.getOrder().getOrderId()));
             orderItem.setId(id);
         }
         orderItemRepository.save(orderItem);

@@ -14,6 +14,6 @@ import java.io.Serializable;
 @ToString
 public class OrderItemId implements Serializable {
     private Integer orderId;
-    private Integer orderItemID;
+    private Integer orderItemId;
 
 }
