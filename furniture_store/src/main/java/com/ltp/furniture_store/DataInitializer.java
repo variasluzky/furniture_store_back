@@ -1,16 +1,21 @@
 package com.ltp.furniture_store;
 
 import com.ltp.furniture_store.entity.PermissionType;
+import com.ltp.furniture_store.entity.RegisteredCustomer;
 import com.ltp.furniture_store.repository.PermissionTypeRepository;
+import com.ltp.furniture_store.repository.RegisteredCustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+
+import java.util.Date;
 
 @Configuration
 public class DataInitializer {
 
     @Bean
-    public CommandLineRunner initData(PermissionTypeRepository permissionTypeRepository) {
+    public CommandLineRunner initData(PermissionTypeRepository permissionTypeRepository, RegisteredCustomerRepository registeredCustomerRepository) {
         return args -> {
             // Check if the table is empty
             if (permissionTypeRepository.count() == 0) {
@@ -22,6 +27,20 @@ public class DataInitializer {
                 PermissionType user = new PermissionType();
                 user.setPermissionStatus("user");
                 permissionTypeRepository.save(user);
+            }
+            // Check if the RegisteredCustomer table is empty
+            if (registeredCustomerRepository.count() == 0) {
+                // Create the first admin user
+                RegisteredCustomer adminUser = new RegisteredCustomer();
+                adminUser.setFirstName("AdminFirstName");
+                adminUser.setLastName("AdminLastName");
+                adminUser.setPhone("1234567890");
+                adminUser.setEmail("admin@example.com");
+                adminUser.setPassword("Zxcvbn123!");
+                adminUser.setPermissions(permissionTypeRepository.findByPermissionStatus("admin"));
+                adminUser.setCreatedAt(new Date());
+                adminUser.setUpdatedAt(new Date());
+                registeredCustomerRepository.save(adminUser);
             }
         };
     }

@@ -1,4 +1,4 @@
-package com.ltp.furniture_store.controller;
+package com.ltp.furniture_store.web;
 import com.ltp.furniture_store.entity.RegisteredCustomer;
 import com.ltp.furniture_store.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -19,6 +19,7 @@ import java.util.List;
 public class RegisteredCustomer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id",nullable = false)
     private Integer customerId;
 
@@ -60,5 +61,17 @@ public class RegisteredCustomer {
 
     @OneToMany(mappedBy = "customer")
     private List<Order> orders;
+
+    // Constructor to automatically set creation and update dates and default permissions
+    public RegisteredCustomer(String firstName, String lastName, String phone, String email, String password, PermissionType permissions) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.permissions = permissions;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
 }
