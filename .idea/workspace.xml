@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8e5a6e2-0df1-414c-8b14-871d7cd43640" name="Changes" comment="" />
+    <list default="true" id="e8e5a6e2-0df1-414c-8b14-871d7cd43640" name="Changes" comment="reverse">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/ColorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/ColorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/web/ColorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/web/ColorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/service/RegistrationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/web/ColorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/web/ColorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/web/RegistrationController.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +110,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724152047416</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="reverse">
+      <option name="closed" value="true" />
+      <created>1724153777533</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724153777533</updated>
+    </task>
+    <task id="LOCAL-00007" summary="reverse">
+      <option name="closed" value="true" />
+      <created>1724154183668</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1724154183668</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
