@@ -65,4 +65,10 @@ public class ShoppingCartController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
     }
+
+    @DeleteMapping("/{cartId}/clear")
+    public ResponseEntity<Void> clearCart(@PathVariable Integer cartId) {
+        shoppingCartService.clearCart(cartId);
+        return ResponseEntity.ok().build();
+    }
 }

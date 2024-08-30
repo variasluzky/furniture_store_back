@@ -1,9 +1,6 @@
 package com.ltp.furniture_store.web;
 
-import com.ltp.furniture_store.entity.Order;
-import com.ltp.furniture_store.entity.OrderDTO;
-import com.ltp.furniture_store.entity.OrderRequest;
-import com.ltp.furniture_store.entity.OrderResponse;
+import com.ltp.furniture_store.entity.*;
 import com.ltp.furniture_store.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,4 +47,16 @@ public class OrderController {
         Order updatedOrder = orderService.updateOrderAddress(orderId, newAddress, userId);
         return ResponseEntity.ok(updatedOrder);
     }
+
+    @DeleteMapping("/cancel/{orderId}")
+    public ResponseEntity<Void> cancelOrder(@PathVariable Integer orderId) {
+        orderService.cancelOrder(orderId);
+        return ResponseEntity.ok().build();
+    }
+    @GetMapping("/{orderId}/items")
+    public ResponseEntity<List<OrderItemDTO>> getOrderItems(@PathVariable Integer orderId) {
+        List<OrderItemDTO> orderItems = orderService.getOrderItemsByOrderId(orderId);
+        return ResponseEntity.ok(orderItems);
+    }
+
 }

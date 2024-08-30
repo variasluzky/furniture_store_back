@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8053235-7c09-44e0-9899-7753a45c64a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -31,12 +40,12 @@
     &quot;assignee&quot;: &quot;variasluzky&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/variasluzky/furniture_store.git&quot;,
-    &quot;accountId&quot;: &quot;723f3869-f08d-47f7-bc44-4478cb2f42ef&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/variasluzky/furniture_store_back.git",
+    "accountId": "723f3869-f08d-47f7-bc44-4478cb2f42ef"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -46,15 +55,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.FurnitureStoreApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FurnitureStoreApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/7341636/Desktop/furniture_store"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.ltp.furniture_store.exception" />
@@ -86,11 +96,6 @@
           <url>file://$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/repository/OrderRepository.java</url>
           <line>8</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

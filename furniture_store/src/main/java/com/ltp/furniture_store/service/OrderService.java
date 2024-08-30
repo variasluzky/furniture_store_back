@@ -108,4 +108,38 @@ public class OrderService {
                                 .collect(Collectors.toList())))
                 .collect(Collectors.toList());
     }
+
+    @Transactional
+    public void cancelOrder(Integer orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        if (order.getStatus().equals(OrderStatusEnum.UNPAID)) {
+            // Update stock for each item
+            for (OrderItem orderItem : order.getOrderItems()) {
+                Catalog catalog = orderItem.getCatalog();
+                catalog.setStock(catalog.getStock() + orderItem.getQuantity());
+                catalogRepository.save(catalog);
+            }
+
+            // Delete the order
+            orderRepository.delete(order);
+        } else {
+            throw new RuntimeException("Only unpaid orders can be canceled.");
+        }
+    }
+
+    @Transactional
+    public List<OrderItemDTO> getOrderItemsByOrderId(Integer orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+
+        return order.getOrderItems().stream()
+                .map(orderItem -> new OrderItemDTO(
+                        orderItem.getCatalog().getProductName(),
+                        orderItem.getQuantity(),
+                        orderItem.getCatalog().getPrice()))
+                .collect(Collectors.toList());
+    }
+
 }

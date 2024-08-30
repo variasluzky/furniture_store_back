@@ -166,5 +166,32 @@ public class ShoppingCartService {
         shoppingCartRepository.save(cart);
         catalogRepository.save(catalog);
     }
+
+    @Transactional
+    public void clearCart(Integer cartId) {
+        ShoppingCart cart = shoppingCartRepository.findById(cartId)
+                .orElseThrow(() -> new RuntimeException("Shopping cart not found with id: " + cartId));
+
+        // Get all items in the cart
+        List<ShoppingCartItem> items = shoppingCartItemRepository.findByShoppingCart(cart);
+
+        // Return stock for each item
+        for (ShoppingCartItem item : items) {
+            Catalog catalogItem = item.getCatalog();
+            catalogItem.setStock(catalogItem.getStock() + item.getQuantityCart());
+            catalogRepository.save(catalogItem);
+
+            // Remove the item from the cart
+            shoppingCartItemRepository.delete(item);
+        }
+
+        //update the cart's status to reflect that it has been cleared
+        ShoppingCartStatus clearedStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELLED);
+        cart.setShoppingCartStatus(clearedStatus);
+        cart.setUpdatedAt(new Date());
+
+        // Save the updated cart
+        shoppingCartRepository.save(cart);
+    }
 }
 
