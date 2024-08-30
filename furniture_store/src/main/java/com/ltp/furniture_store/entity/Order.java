@@ -1,10 +1,13 @@
 package com.ltp.furniture_store.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Getter
@@ -21,7 +24,8 @@ public class Order {
     private Integer orderId;
 
     @NonNull
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private RegisteredCustomer customer;
 
@@ -47,4 +51,7 @@ public class Order {
     @Column(name = "delivery")
     private Boolean delivery;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderItem> orderItems;
 }

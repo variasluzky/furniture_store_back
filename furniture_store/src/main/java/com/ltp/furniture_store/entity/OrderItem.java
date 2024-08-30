@@ -1,6 +1,8 @@
 package com.ltp.furniture_store.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,8 +17,9 @@ public class OrderItem {
     @EmbeddedId
     private OrderItemId id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("orderId")  // This maps the orderId attribute of OrderItemId to the Order entity
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @MapsId("orderId")
     @JoinColumn(name = "order_id",nullable = false)
     private Order order;
 

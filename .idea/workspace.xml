@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8e5a6e2-0df1-414c-8b14-871d7cd43640" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/CatalogUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/CatalogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/PromotionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/CatalogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/PromotionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/web/CatalogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/web/PromotionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Promotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/entity/Promotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/ColorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/ColorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/PermissionTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/repository/PermissionTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/ColorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/src/main/java/com/ltp/furniture_store/service/ColorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/entity/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/entity/Catalog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/entity/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/entity/Color.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/repository/ColorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/repository/ColorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/service/ColorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/furniture_store/target/classes/com/ltp/furniture_store/service/ColorService.class" afterDir="false" />
+    <list default="true" id="a8053235-7c09-44e0-9899-7753a45c64a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/furniture_store" />
-    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -56,10 +38,10 @@
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2kowLd3K9DQXzG140fkCeUax5SU" />
+  <component name="ProjectId" id="2l8pos3x2VH7Cvyg8flsIfjChcZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,106 +52,46 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/7341636/Desktop/furniture_store&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ltp.furniture_store.exception" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ltp.furniture_store.service" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8e5a6e2-0df1-414c-8b14-871d7cd43640" name="Changes" comment="" />
-      <created>1723963185365</created>
+      <changelist id="a8053235-7c09-44e0-9899-7753a45c64a0" name="Changes" comment="" />
+      <created>1724571735996</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1723963185365</updated>
+      <updated>1724571735996</updated>
     </task>
-    <task id="LOCAL-00001" summary="updated files for divided front and back">
-      <option name="closed" value="true" />
-      <created>1724074903128</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1724074903128</updated>
-    </task>
-    <task id="LOCAL-00002" summary="updated files for divided front and back">
-      <option name="closed" value="true" />
-      <created>1724092863043</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1724092863043</updated>
-    </task>
-    <task id="LOCAL-00003" summary="colors added services and control">
-      <option name="closed" value="true" />
-      <created>1724146980516</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1724146980517</updated>
-    </task>
-    <task id="LOCAL-00004" summary="merge Merge branch 'main' of https://github.com/variasluzky/furniture_store&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
-      <option name="closed" value="true" />
-      <created>1724147705200</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1724147705200</updated>
-    </task>
-    <task id="LOCAL-00005" summary="reverse">
-      <option name="closed" value="true" />
-      <created>1724152047416</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1724152047416</updated>
-    </task>
-    <task id="LOCAL-00006" summary="reverse">
-      <option name="closed" value="true" />
-      <created>1724153777533</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1724153777533</updated>
-    </task>
-    <task id="LOCAL-00007" summary="reverse">
-      <option name="closed" value="true" />
-      <created>1724154183668</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1724154183668</updated>
-    </task>
-    <task id="LOCAL-00008" summary="colors">
-      <option name="closed" value="true" />
-      <created>1724156818334</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1724156818334</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated files for divided front and back" />
-    <MESSAGE value="colors added services and control" />
-    <MESSAGE value="merge Merge branch 'main' of https://github.com/variasluzky/furniture_store&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;" />
-    <MESSAGE value="merge Merge branch 'main' of https://github.com/variasluzky/furniture_store&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit." />
-    <MESSAGE value="reverse" />
-    <MESSAGE value="colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="colors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="com.microsoft.sqlserver.jdbc.SQLServerException" package="com.microsoft.sqlserver.jdbc" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.hibernate.exception.ConstraintViolationException" package="org.hibernate.exception" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/RegisteredCustomer.java</url>
+          <line>19</line>
           <option name="timeStamp" value="2" />
-        </breakpoint>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/repository/OrderRepository.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
