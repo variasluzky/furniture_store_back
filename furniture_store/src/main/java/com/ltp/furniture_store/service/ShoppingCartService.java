@@ -3,6 +3,8 @@ package com.ltp.furniture_store.service;
 import com.ltp.furniture_store.entity.*;
 import com.ltp.furniture_store.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -168,31 +170,38 @@ public class ShoppingCartService {
     }
 
     @Transactional
-    public void clearCart(Integer cartId) {
-        ShoppingCart cart = shoppingCartRepository.findById(cartId)
-                .orElseThrow(() -> new RuntimeException("Shopping cart not found with id: " + cartId));
+    public ResponseEntity<String> clearCart(Integer cartId) {
+        Optional<ShoppingCart> cartOptional = shoppingCartRepository.findById(cartId);
 
-        // Get all items in the cart
+        if (cartOptional.isEmpty()) {
+            return new ResponseEntity<>("Shopping cart not found with id: " + cartId, HttpStatus.NOT_FOUND);
+        }
+
+        ShoppingCart cart = cartOptional.get();
+
+        // Proceed with clearing the cart
         List<ShoppingCartItem> items = shoppingCartItemRepository.findByShoppingCart(cart);
 
-        // Return stock for each item
         for (ShoppingCartItem item : items) {
             Catalog catalogItem = item.getCatalog();
             catalogItem.setStock(catalogItem.getStock() + item.getQuantityCart());
             catalogRepository.save(catalogItem);
 
-            // Remove the item from the cart
             shoppingCartItemRepository.delete(item);
         }
 
-        //update the cart's status to reflect that it has been cleared
+        // Update the cart's status to reflect that it has been cleared
         ShoppingCartStatus clearedStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELED);
         cart.setShoppingCartStatus(clearedStatus);
         cart.setUpdatedAt(new Date());
 
         // Save the updated cart
         shoppingCartRepository.save(cart);
+
+        return new ResponseEntity<>("Cart cleared successfully", HttpStatus.OK);
     }
+
+
 
     public List<ShoppingCart> getActiveShoppingCarts() {
         return shoppingCartRepository.findByShoppingCartStatus_StatusDescription(ShoppingCartStatusEnum.ACTIVE);

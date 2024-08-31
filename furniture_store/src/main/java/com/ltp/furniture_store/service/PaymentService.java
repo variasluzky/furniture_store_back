@@ -34,7 +34,7 @@ public class PaymentService {
     private StatusRepository statusRepository;
 
     @Transactional
-    public Payment processPayment(Integer userId, Integer orderId, String cardholderId, String cardholderFirstName, String cardholderLastName, String creditCardNumber, YearMonth creditCardExpDate, String cvv) {
+    public void processPayment(Integer userId, Integer orderId, String cardholderId, String cardholderFirstName, String cardholderLastName, String creditCardNumber, YearMonth creditCardExpDate, String cvv) {
 
         RegisteredCustomer customer = registeredCustomerService.findUserById(userId);
         Order order = orderRepository.findById(orderId).orElseThrow(() -> new RuntimeException("Order not found"));
@@ -53,7 +53,5 @@ public class PaymentService {
         // Update the order status to "Paid"
         order.setStatus(statusRepository.findByDescriptionStatus(OrderStatusEnum.PAID));
         orderRepository.save(order);
-
-        return payment;
     }
 }

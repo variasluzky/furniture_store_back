@@ -22,15 +22,16 @@ public class PaymentController {
     private PaymentService paymentService;
 
 
+
     @PostMapping("/process")
-    public ResponseEntity<?> processPayment(@RequestBody PaymentRequest paymentRequest) {
+    public ResponseEntity<Void> processPayment(@RequestBody PaymentRequest paymentRequest) {
         try {
             System.out.println("Received payment request: " + paymentRequest);
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
             YearMonth creditCardExpDate = YearMonth.parse(paymentRequest.getCreditCardExpDate(), formatter);
 
-            Payment payment = paymentService.processPayment(
+            paymentService.processPayment(
                     paymentRequest.getUserId(),
                     paymentRequest.getOrderId(),
                     paymentRequest.getCardholderId(),
@@ -41,24 +42,15 @@ public class PaymentController {
                     paymentRequest.getCvv()
             );
 
-            // Assuming payment is successful, return the order details or redirect URL
-            URI redirectUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/orders")
-                    .build()
-                    .toUri();
-
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .location(redirectUri)
-                    .body(payment);
+            // Just return OK
+            return ResponseEntity.ok().build();
 
         } catch (DateTimeParseException e) {
             System.err.println("Error parsing date: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Invalid date format. Please check your credit card expiration date.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         } catch (RuntimeException e) {
             System.err.println("Error processing payment: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Payment processing failed. Please try again.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
 
