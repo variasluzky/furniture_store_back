@@ -20,10 +20,10 @@ public class Promotion {
 
     @NonNull
     @Column(name = "discount", nullable = false)
-    private BigDecimal discount;  // This will store the percentage discount
+    private BigDecimal discount;
 
     @NonNull
     @Column(name = "description", nullable = false, length = 255)
-    private String description;  // This will store the description of the promotion
+    private String description;
 
 }

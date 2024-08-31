@@ -42,7 +42,7 @@ public class PaymentController {
                     paymentRequest.getCvv()
             );
 
-            // Just return OK
+
             return ResponseEntity.ok().build();
 
         } catch (DateTimeParseException e) {

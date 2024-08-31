@@ -7,10 +7,10 @@ public class RegistrationDTO {
     private String password;
     private String phone;
 
-    // Default constructor
+
     public RegistrationDTO() {}
 
-    // Parameterized constructor for easier initialization
+
     public RegistrationDTO(String firstName, String lastName, String email, String password, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,7 +19,7 @@ public class RegistrationDTO {
         this.phone = phone;
     }
 
-    // Getters
+
     public String getFirstName() {
         return firstName;
     }

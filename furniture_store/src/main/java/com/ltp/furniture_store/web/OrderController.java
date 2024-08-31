@@ -53,10 +53,10 @@ public class OrderController {
 
 
     @PutMapping("/update-address")
-    public ResponseEntity<Order> updateOrderAddress(@RequestParam Integer orderId, @RequestParam String newAddress, @RequestParam Integer userId) {
-        Order updatedOrder = orderService.updateOrderAddress(orderId, newAddress, userId);
-        return ResponseEntity.ok(updatedOrder);
+    public ResponseEntity<String> updateOrderAddress(@RequestParam Integer orderId, @RequestParam String newAddress, @RequestParam Integer userId) {
+        return orderService.updateOrderAddress(orderId, newAddress, userId);
     }
+
 
     @PutMapping("/cancel-order")
     public ResponseEntity<String> cancelOrder(@RequestParam Integer orderId) {

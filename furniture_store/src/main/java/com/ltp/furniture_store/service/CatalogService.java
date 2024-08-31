@@ -39,13 +39,13 @@ public class CatalogService {
 
     // Create a new item in Catalog
     public Catalog createCatalog(CatalogUpdateDTO catalogDTO) {
-        // Retrieve the Color entity based on colorCode
+
         Color color = colorRepository.findById(catalogDTO.getColorCode())
                 .orElseThrow(() -> new EntityNotFoundException("Color not found"));
         Promotion promotion = promotionRepository.findById(catalogDTO.getPromotionCode())
                 .orElseThrow(() -> new EntityNotFoundException("Promotion not found"));
 
-        // Map CatalogUpdateDTO to Catalog entity
+
         Catalog catalog = new Catalog();
         catalog.setProductName(catalogDTO.getProductName());
         catalog.setDescription(catalogDTO.getDescription());

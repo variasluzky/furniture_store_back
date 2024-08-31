@@ -83,7 +83,7 @@ public class RegisteredCustomer {
         this.email = email;
         this.password = password;
         this.phone = phone;
-        this.createdAt = new Date(); // Assuming you want to set creation and update dates at the time of registration
+        this.createdAt = new Date();
         this.updatedAt = new Date();
     }
 

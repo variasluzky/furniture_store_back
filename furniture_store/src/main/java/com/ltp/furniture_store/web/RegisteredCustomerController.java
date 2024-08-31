@@ -43,7 +43,6 @@ public class RegisteredCustomerController {
     }
 
 
-    // GET endpoint for fetching a user by ID
     @GetMapping("/users/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Integer id) {
         try {
@@ -66,17 +65,16 @@ public class RegisteredCustomerController {
                 throw new IncorrectPasswordException("Password is incorrect for email: " + email);
             }
 
-            // This assumes customer.getPermissions() is not null
+
             UserDTO userDTO = new UserDTO(
                     customer.getCustomerId(),
                     customer.getFirstName(),
                     customer.getLastName(),
                     customer.getEmail(),
                     customer.getPhone(),
-                    customer.getPermissions().getPermissionStatus() // Ensure this is not null
+                    customer.getPermissions().getPermissionStatus()
             );
 
-            System.out.println("UserDTO created: " + userDTO); // Add this line for debugging
 
             return ResponseEntity.ok(userDTO);
         } catch (UserNotFoundException | IncorrectPasswordException e) {

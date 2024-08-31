@@ -67,7 +67,6 @@ public class ShoppingCartService {
         RegisteredCustomer customer = registeredCustomerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + customerId));
 
-        // Now, use the RegisteredCustomer object to find the active shopping cart
         Optional<ShoppingCart> cart = shoppingCartRepository.findByCustomerAndShoppingCartStatus_StatusDescription(
                 customer, ShoppingCartStatusEnum.ACTIVE);
 
@@ -84,12 +83,24 @@ public class ShoppingCartService {
         dto.setProductName(item.getCatalog().getProductName());
         dto.setQuantity(item.getQuantityCart());
         dto.setPrice(item.getCatalog().getPrice());
-        dto.setPromotion(item.getCatalog().getPromotion().getDiscount()); // Ensure this is correct
+        dto.setPromotion(item.getCatalog().getPromotion().getDiscount());
         dto.setTotalPrice(item.getCatalog().getPrice().multiply(new BigDecimal(item.getQuantityCart())));
         return dto;
     }
 
+    private ShoppingCartDTO convertToDTO(ShoppingCart cart) {
+        String statusDescription = cart.getShoppingCartStatus() != null ?
+                cart.getShoppingCartStatus().getStatusDescription().toString() :
+                "Unknown";
 
+        return new ShoppingCartDTO(
+                cart.getCartId(),
+                cart.getCustomer().getCustomerId(),
+                cart.getCreatedAt(),
+                cart.getUpdatedAt(),
+                statusDescription
+        );
+    }
 
 
     @Transactional
@@ -207,38 +218,9 @@ public class ShoppingCartService {
         return shoppingCartRepository.findByShoppingCartStatus_StatusDescription(ShoppingCartStatusEnum.ACTIVE);
     }
 
-
-    @Transactional
-    public void cancelCart(Integer cartId) {
-        ShoppingCart cart = shoppingCartRepository.findById(cartId)
-                .orElseThrow(() -> new RuntimeException("Cart not found with id: " + cartId));
-
-        // Print cart details for debugging
-        System.out.println("Canceling cart: " + cartId);
-
-        // Retrieve all items in the cart
-        List<ShoppingCartItem> items = shoppingCartItemRepository.findByShoppingCart(cart);
-
-        // Return stock for each item
-        for (ShoppingCartItem item : items) {
-            Catalog catalog = item.getCatalog();
-            System.out.println("Returning stock for product: " + catalog.getProductName());
-            catalog.setStock(catalog.getStock() + item.getQuantityCart());
-            catalogRepository.save(catalog);
-
-            // Optionally, remove the item from the cart or handle accordingly
-            shoppingCartItemRepository.delete(item);
-        }
-
-        // Mark the cart as canceled
-        ShoppingCartStatus canceledStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELED);
-        cart.setShoppingCartStatus(canceledStatus);
-        shoppingCartRepository.save(cart);
-        System.out.println("Cart canceled successfully.");
     }
 
 
 
 
-}
 

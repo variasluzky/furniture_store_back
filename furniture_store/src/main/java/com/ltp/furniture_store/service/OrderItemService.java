@@ -17,7 +17,7 @@ public class OrderItemService {
     public void saveOrderItem(OrderItem orderItem) {
         if (orderItem.getId() == null) {
             OrderItemId id = new OrderItemId();
-            id.setOrderId(orderItem.getOrder().getOrderId()); // Set orderId from Order entity
+            id.setOrderId(orderItem.getOrder().getOrderId());
             id.setOrderItemId(generateNextOrderItemId(orderItem.getOrder().getOrderId()));
             orderItem.setId(id);
         }

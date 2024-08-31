@@ -77,7 +77,7 @@ public class ShoppingCartController {
     public ResponseEntity<List<ShoppingCartDTO>> getActiveShoppingCarts() {
         List<ShoppingCart> activeCarts = shoppingCartService.getActiveShoppingCarts();
 
-        // Convert to DTOs to avoid nesting depth issues
+
         List<ShoppingCartDTO> activeCartDTOs = activeCarts.stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
@@ -85,11 +85,6 @@ public class ShoppingCartController {
         return ResponseEntity.ok(activeCartDTOs);
     }
 
-    @PutMapping("/{cartId}/cancel")
-    public ResponseEntity<String> cancelCart(@PathVariable Integer cartId) {
-        shoppingCartService.cancelCart(cartId);
-        return ResponseEntity.ok("Cart successfully canceled and stock updated");
-    }
 
     private ShoppingCartDTO convertToDTO(ShoppingCart cart) {
         return new ShoppingCartDTO(
@@ -97,7 +92,7 @@ public class ShoppingCartController {
                 cart.getCustomer().getCustomerId(),
                 cart.getCreatedAt(),
                 cart.getUpdatedAt(),
-                cart.getShoppingCartStatus().getStatusDescription().toString() // Convert Enum to String
+                cart.getShoppingCartStatus().getStatusDescription().toString()
         );
     }
 

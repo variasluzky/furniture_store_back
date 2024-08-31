@@ -6,7 +6,7 @@ import com.ltp.furniture_store.repository.ShoppingCartItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-////use this service to save shoppingCartItem
+
 @Service
 public class ShoppingCartItemService {
 
