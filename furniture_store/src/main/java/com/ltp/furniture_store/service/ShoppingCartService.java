@@ -193,5 +193,43 @@ public class ShoppingCartService {
         // Save the updated cart
         shoppingCartRepository.save(cart);
     }
+
+    public List<ShoppingCart> getActiveShoppingCarts() {
+        return shoppingCartRepository.findByShoppingCartStatus_StatusDescription(ShoppingCartStatusEnum.ACTIVE);
+    }
+
+
+    @Transactional
+    public void cancelCart(Integer cartId) {
+        ShoppingCart cart = shoppingCartRepository.findById(cartId)
+                .orElseThrow(() -> new RuntimeException("Cart not found with id: " + cartId));
+
+        // Print cart details for debugging
+        System.out.println("Canceling cart: " + cartId);
+
+        // Retrieve all items in the cart
+        List<ShoppingCartItem> items = shoppingCartItemRepository.findByShoppingCart(cart);
+
+        // Return stock for each item
+        for (ShoppingCartItem item : items) {
+            Catalog catalog = item.getCatalog();
+            System.out.println("Returning stock for product: " + catalog.getProductName());
+            catalog.setStock(catalog.getStock() + item.getQuantityCart());
+            catalogRepository.save(catalog);
+
+            // Optionally, remove the item from the cart or handle accordingly
+            shoppingCartItemRepository.delete(item);
+        }
+
+        // Mark the cart as canceled
+        ShoppingCartStatus canceledStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELED);
+        cart.setShoppingCartStatus(canceledStatus);
+        shoppingCartRepository.save(cart);
+        System.out.println("Cart canceled successfully.");
+    }
+
+
+
+
 }
 

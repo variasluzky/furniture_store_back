@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8053235-7c09-44e0-9899-7753a45c64a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/OrderStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/OrderStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/repository/ShoppingCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/repository/ShoppingCartRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1725006760725</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="managing orders -complete,cancel">
+      <option name="closed" value="true" />
+      <created>1725109697536</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725109697536</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;delete update&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;delete update&quot;" />
+    <MESSAGE value="managing orders -complete,cancel" />
+    <option name="LAST_COMMIT_MESSAGE" value="managing orders -complete,cancel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
