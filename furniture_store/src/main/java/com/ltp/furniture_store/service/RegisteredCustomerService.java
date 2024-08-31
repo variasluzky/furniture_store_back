@@ -40,6 +40,11 @@ import java.util.Optional;
     public List<RegisteredCustomer> getAllCustomers() {
         return registeredCustomerRepository.findAll();
     }
+
+    public RegisteredCustomer save(RegisteredCustomer registeredCustomer) {
+        return registeredCustomerRepository.save(registeredCustomer);
+    }
+
 }
 
 

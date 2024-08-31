@@ -8,10 +8,14 @@ import com.ltp.furniture_store.entity.UserDTO;
 import com.ltp.furniture_store.repository.PermissionTypeRepository;
 import com.ltp.furniture_store.service.RegisteredCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -95,6 +99,33 @@ public class RegisteredCustomerController {
 
         return ResponseEntity.ok(customerDTOs);
     }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<?> updateUserDetails(@PathVariable Integer id, @RequestBody Map<String, String> updates) {
+        try {
+            RegisteredCustomer customer = registrationService.findUserById(id);
+            if (updates.containsKey("firstName")) {
+                customer.setFirstName(updates.get("firstName"));
+            }
+            if (updates.containsKey("lastName")) {
+                customer.setLastName(updates.get("lastName"));
+            }
+            if (updates.containsKey("phone")) {
+                customer.setPhone(updates.get("phone"));
+            }
+            customer.setUpdatedAt(new Date());
+            registrationService.save(customer);
+            // Return JSON response
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "User details updated successfully");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error updating user details: " + e.getMessage());
+        }
+    }
+
+
+
 }
 
 
