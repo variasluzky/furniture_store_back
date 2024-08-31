@@ -2,6 +2,7 @@ package com.ltp.furniture_store.web;
 
 import com.ltp.furniture_store.entity.*;
 import com.ltp.furniture_store.service.OrderService;
+import com.ltp.furniture_store.service.RegisteredCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,9 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private RegisteredCustomerService registeredCustomerService;
 
 
     @PostMapping("/create")
@@ -37,10 +41,16 @@ public class OrderController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<OrderDTO>> getOrdersByUserId(@PathVariable Integer userId) {
-        List<OrderDTO> orders = orderService.getOrdersByUserId(userId);
+    public ResponseEntity<List<OrderDTO>> getOrders(@PathVariable Integer userId, @RequestParam boolean isAdmin) {
+        System.out.println("Received userId: " + userId);
+        System.out.println("Received isAdmin: " + isAdmin);
+
+        RegisteredCustomer user = registeredCustomerService.findUserById(userId);
+        List<OrderDTO> orders = orderService.getOrdersByUserIdOrAll(userId, isAdmin);
         return ResponseEntity.ok(orders);
     }
+
+
 
     @PutMapping("/update-address")
     public ResponseEntity<Order> updateOrderAddress(@RequestParam Integer orderId, @RequestParam String newAddress, @RequestParam Integer userId) {
@@ -48,15 +58,21 @@ public class OrderController {
         return ResponseEntity.ok(updatedOrder);
     }
 
-    @DeleteMapping("/cancel/{orderId}")
-    public ResponseEntity<Void> cancelOrder(@PathVariable Integer orderId) {
+    @PutMapping("/cancel-order")
+    public ResponseEntity<String> cancelOrder(@RequestParam Integer orderId) {
         orderService.cancelOrder(orderId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("Order successfully marked as canceled");
     }
+
     @GetMapping("/{orderId}/items")
     public ResponseEntity<List<OrderItemDTO>> getOrderItems(@PathVariable Integer orderId) {
         List<OrderItemDTO> orderItems = orderService.getOrderItemsByOrderId(orderId);
         return ResponseEntity.ok(orderItems);
+    }
+
+    @PutMapping("/complete-order")
+    public ResponseEntity<String> completeOrder(@RequestParam Integer orderId, @RequestParam Integer adminUserId) {
+        return orderService.updateOrderStatusToCompleted(orderId, adminUserId);
     }
 
 }

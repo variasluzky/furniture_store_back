@@ -2,7 +2,7 @@ package com.ltp.furniture_store.entity;
 
 public enum ShoppingCartStatusEnum {
     ACTIVE("Active"),
-    CANCELLED("Cancelled"),
+    CANCELED("Canceled"),
     COMPLETED("Completed");
 
     private final String description;

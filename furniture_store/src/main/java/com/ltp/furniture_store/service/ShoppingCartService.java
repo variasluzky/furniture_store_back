@@ -159,8 +159,8 @@ public class ShoppingCartService {
 
         // Update the cart
         if (shoppingCartItemRepository.findByShoppingCart(cart).isEmpty()) {
-            ShoppingCartStatus cancelledStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELLED);
-            cart.setShoppingCartStatus(cancelledStatus);
+            ShoppingCartStatus canceledStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELED);
+            cart.setShoppingCartStatus(canceledStatus);
         }
 
         shoppingCartRepository.save(cart);
@@ -186,7 +186,7 @@ public class ShoppingCartService {
         }
 
         //update the cart's status to reflect that it has been cleared
-        ShoppingCartStatus clearedStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELLED);
+        ShoppingCartStatus clearedStatus = shoppingCartStatusRepository.findByStatusDescription(ShoppingCartStatusEnum.CANCELED);
         cart.setShoppingCartStatus(clearedStatus);
         cart.setUpdatedAt(new Date());
 

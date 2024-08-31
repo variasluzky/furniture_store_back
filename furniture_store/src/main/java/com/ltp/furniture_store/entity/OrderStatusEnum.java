@@ -3,7 +3,7 @@ package com.ltp.furniture_store.entity;
 public enum OrderStatusEnum {
     UNPAID("Unpaid"),
     PAID("Paid"),
-    CANCELLED("Cancelled"),
+    CANCELED("Canceled"),
     COMPLETED("Completed");
 
     private final String description;
