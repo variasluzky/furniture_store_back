@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -77,14 +76,12 @@ public class ShoppingCartController {
     public ResponseEntity<List<ShoppingCartDTO>> getActiveShoppingCarts() {
         List<ShoppingCart> activeCarts = shoppingCartService.getActiveShoppingCarts();
 
-
         List<ShoppingCartDTO> activeCartDTOs = activeCarts.stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(activeCartDTOs);
     }
-
 
     private ShoppingCartDTO convertToDTO(ShoppingCart cart) {
         return new ShoppingCartDTO(
@@ -95,5 +92,4 @@ public class ShoppingCartController {
                 cart.getShoppingCartStatus().getStatusDescription().toString()
         );
     }
-
 }

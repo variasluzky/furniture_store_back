@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.Date;
@@ -52,7 +51,6 @@ public class ShoppingCartService {
         return cart;
     }
 
-
     // Complete the cart
     @Transactional
     public void completeCart(ShoppingCart cart) {
@@ -75,65 +73,6 @@ public class ShoppingCartService {
             return items.stream().map(this::convertToDTO).collect(Collectors.toList());
         }
         return Collections.emptyList();
-    }
-
-    private ShoppingCartItemDTO convertToDTO(ShoppingCartItem item) {
-        ShoppingCartItemDTO dto = new ShoppingCartItemDTO();
-        dto.setProductId(item.getCatalog().getProductID());
-        dto.setProductName(item.getCatalog().getProductName());
-        dto.setQuantity(item.getQuantityCart());
-        dto.setPrice(item.getCatalog().getPrice());
-        dto.setPromotion(item.getCatalog().getPromotion().getDiscount());
-        dto.setTotalPrice(item.getCatalog().getPrice().multiply(new BigDecimal(item.getQuantityCart())));
-        return dto;
-    }
-
-    private ShoppingCartDTO convertToDTO(ShoppingCart cart) {
-        String statusDescription = cart.getShoppingCartStatus() != null ?
-                cart.getShoppingCartStatus().getStatusDescription().toString() :
-                "Unknown";
-
-        return new ShoppingCartDTO(
-                cart.getCartId(),
-                cart.getCustomer().getCustomerId(),
-                cart.getCreatedAt(),
-                cart.getUpdatedAt(),
-                statusDescription
-        );
-    }
-
-
-    @Transactional
-    public ShoppingCartItem addItemToCart(ShoppingCart cart, Catalog catalog, int quantity) {
-        Optional<ShoppingCartItem> existingItem = shoppingCartItemRepository.findById(
-                new ShoppingCartItemId(cart.getCartId(), Math.toIntExact(catalog.getProductID())));
-
-        int totalQuantity = quantity;
-        if (existingItem.isPresent()) {
-            totalQuantity += existingItem.get().getQuantityCart();
-        }
-
-        if (catalog.getStock() < totalQuantity) {
-            throw new IllegalArgumentException("Insufficient stock for product: " + catalog.getProductName());
-        }
-
-        catalog.setStock(catalog.getStock() - quantity);
-        catalogRepository.save(catalog);
-
-        ShoppingCartItem item;
-        if (existingItem.isPresent()) {
-            item = existingItem.get();
-            item.setQuantityCart(totalQuantity);
-        } else {
-            ShoppingCartItemId itemId = new ShoppingCartItemId(cart.getCartId(), Math.toIntExact(catalog.getProductID()));
-            item = new ShoppingCartItem(itemId, cart, catalog, totalQuantity);
-        }
-
-        shoppingCartItemRepository.save(item);
-        cart.setUpdatedAt(new Date());
-        shoppingCartRepository.save(cart);
-
-        return item;
     }
 
     @Transactional
@@ -212,15 +151,63 @@ public class ShoppingCartService {
         return new ResponseEntity<>("Cart cleared successfully", HttpStatus.OK);
     }
 
-
-
     public List<ShoppingCart> getActiveShoppingCarts() {
         return shoppingCartRepository.findByShoppingCartStatus_StatusDescription(ShoppingCartStatusEnum.ACTIVE);
     }
 
+    public ShoppingCartDTO convertToDTO(ShoppingCart cart) {
+
+        String statusDescription = cart.getShoppingCartStatus().getStatusDescription().toString();
+
+        return new ShoppingCartDTO(
+                cart.getCartId(),
+                cart.getCustomer().getCustomerId(),
+                cart.getCreatedAt(),
+                cart.getUpdatedAt(),
+                statusDescription
+        );
+    }
+    public ShoppingCartItemDTO convertToDTO(ShoppingCartItem item) {
+        ShoppingCartItemDTO dto = new ShoppingCartItemDTO();
+        dto.setProductId(item.getCatalog().getProductID());
+        dto.setProductName(item.getCatalog().getProductName());
+        dto.setQuantity(item.getQuantityCart());
+        dto.setPrice(item.getCatalog().getPrice());
+        dto.setPromotion(item.getCatalog().getPromotion().getDiscount());
+        dto.setTotalPrice(item.getCatalog().getPrice().multiply(new BigDecimal(item.getQuantityCart())));
+        return dto;
     }
 
+    @Transactional
+    public ShoppingCartItem addItemToCart(ShoppingCart cart, Catalog catalog, int quantity) {
+        Optional<ShoppingCartItem> existingItem = shoppingCartItemRepository.findById(
+                new ShoppingCartItemId(cart.getCartId(), Math.toIntExact(catalog.getProductID())));
 
+        int totalQuantity = quantity;
+        if (existingItem.isPresent()) {
+            totalQuantity += existingItem.get().getQuantityCart();
+        }
 
+        if (catalog.getStock() < totalQuantity) {
+            throw new IllegalArgumentException("Insufficient stock for product: " + catalog.getProductName());
+        }
 
+        catalog.setStock(catalog.getStock() - quantity);
+        catalogRepository.save(catalog);
 
+        ShoppingCartItem item;
+        if (existingItem.isPresent()) {
+            item = existingItem.get();
+            item.setQuantityCart(totalQuantity);
+        } else {
+            ShoppingCartItemId itemId = new ShoppingCartItemId(cart.getCartId(), Math.toIntExact(catalog.getProductID()));
+            item = new ShoppingCartItem(itemId, cart, catalog, totalQuantity);
+        }
+
+        shoppingCartItemRepository.save(item);
+        cart.setUpdatedAt(new Date());
+        shoppingCartRepository.save(cart);
+
+        return item;
+    }
+}

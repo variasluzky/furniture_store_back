@@ -115,7 +115,6 @@ public class RegisteredCustomerController {
             }
             customer.setUpdatedAt(new Date());
             registrationService.save(customer);
-            // Return JSON response
             Map<String, String> response = new HashMap<>();
             response.put("message", "User details updated successfully");
             return ResponseEntity.ok(response);

@@ -6,8 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="a8053235-7c09-44e0-9899-7753a45c64a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/RegisteredCustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/RegisteredCustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/CartItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/CartItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/entity/ShoppingCartItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/service/ShoppingCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/RegisteredCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/RegisteredCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_store/src/main/java/com/ltp/furniture_store/web/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/DataInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/FurnitureStoreApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Catalog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/CreditCardDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/OrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/OrderItemId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/PermissionType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Promotion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/RegisteredCustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/ShoppingCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/ShoppingCartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/ShoppingCartItemId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/ShoppingCartStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/entity/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/repository/OrderItemRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/repository/PermissionTypeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/repository/RegisteredCustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/repository/ShoppingCartItemRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/repository/StatusRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/service/EncryptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/service/OrderItemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/service/PermissionTypeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/service/ShoppingCartItemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_store/target/classes/com/ltp/furniture_store/web/PermissionTypeController.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725133258643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update user detaile">
+      <option name="closed" value="true" />
+      <created>1725136458203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725136458203</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -128,7 +170,8 @@
     <MESSAGE value="managing shopping carts" />
     <MESSAGE value="payment" />
     <MESSAGE value="update adress" />
-    <option name="LAST_COMMIT_MESSAGE" value="update adress" />
+    <MESSAGE value="update user detaile" />
+    <option name="LAST_COMMIT_MESSAGE" value="update user detaile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
